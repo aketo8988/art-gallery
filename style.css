@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif JP', serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    min-height: calc(100vh - 40px);
+    padding: 40px;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.nav-item {
+    /* 【調整1】music/movie/artの文字背景サイズ調整 */
+    /* 左右の余白: 1.5emで半角3文字分程度 */
+    /* 上下の余白: 0.5emで文字1文字分程度 */
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-item.active {
+    /* 【調整1】背景色を#FFD700に変更 */
+    background-color: #FFD700;
+    color: #000000;
+}
+
+.nav-separator {
+    /* 【調整2】区切り線の長さ調整 */
+    /* width: 線の長さ（現在10pxで半分程度） */
+    /* height: 線の太さ */
+    width: 10px;
+    height: 1px;
+    background-color: #666666;
+}
+
+.content {
+    margin-top: 60px;
+}
+
+.content-title {
+    font-size: 1.8rem;
+    /* 【調整5】太字に変更 */
+    font-weight: 700;
+    text-align: center;
+    /* 【修正】背景色をなしに変更 */
+    background-color: transparent;
+    color: #000000;
+    padding: 16px 0;
+    /* 【調整3】枠線からの距離調整 */
+    /* margin: 上 右 下 左の順で指定 */
+    /* 左右の値（現在20px）を変更すると枠線からの距離を調整可能 */
+    margin: 0 20px 0 20px;
+    position: relative;
+}
+
+/* 【修正】曲名の上部にライン追加 */
+.content-title::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* 曲名から少し上に配置 */
+    left: -20px; /* 枠線にピッタリ接する */
+    right: -20px; /* 枠線にピッタリ接する */
+    height: 1px;
+    background-color: #000000; /* 枠線と同じ色 */
+}
+
+/* 【調整4】曲名の上下の境界線を削除（コメントアウト） */
+/*
+.content-title::before,
+.content-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+}
+
+.content-title::before {
+    left: 0;
+}
+
+.content-title::after {
+    right: 0;
+}
+*/
+
+.video-container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+        min-height: calc(100vh - 20px);
+    }
+    
+    .main-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 1px;
+    }
+    
+    .nav-separator {
+        /* 【調整2】スマホ版の区切り線の長さ調整 */
+        /* width: 線の長さ（PC版と同じ値を使用） */
+        /* height: 線の太さ */
+        width: 10px;
+        height: 1px;
+    }
+    
+    .nav-item {
+        /* 【調整1】スマホ版のmusic/movie/artの文字背景サイズ調整 */
+        /* 左右の余白: 1.5emで半角3文字分程度（PC版と同じ） */
+        /* 上下の余白: 0.5emで文字1文字分程度（PC版と同じ） */
+        width: 100%;
+        text-align: center;
+        padding: 0.5em 1.5em;
+    }
+    
+    .content-title {
+        font-size: 1.5rem;
+        /* 【調整3】モバイル版の枠線からの距離調整 */
+        /* 左右の値（現在10px）を変更すると枠線からの距離を調整可能 */
+        margin: 0 10px 0 10px;
+    }
+    
+    /* 【修正】モバイル版の曲名上部ライン調整 */
+    .content-title::before {
+        left: -10px; /* モバイル版の枠線にピッタリ接する */
+        right: -10px; /* モバイル版の枠線にピッタリ接する */
+    }
+    
+    .video-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-title {
+        font-size: 1.3rem;
+    }
+    
+    .nav-item {
+        font-size: 1rem;
+    }
+}
+
