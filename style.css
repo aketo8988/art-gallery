@@ -195,7 +195,7 @@ body {
         /* 上下の余白: 0.5emで文字1文字分程度（PC版と同じ） */
         width: 100%;
         text-align: center;
-        padding: 1em 8em;
+        padding: 5em 20em;
     }
     
     .content-title {
