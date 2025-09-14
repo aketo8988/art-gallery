@@ -30,10 +30,21 @@ body {
 }
 
 .main-title {
-    font-size: 2.5rem;
-    font-weight: 500;
+    font-size: 2.2rem; /* 元の2.5remから少し小さく */
+    font-weight: 400;
+    text-align: center;
     margin-bottom: 40px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.02em; /* レタースペーシングを少し狭く */
+}
+
+.main-title a {
+    color: inherit; /* 親要素の色を継承（黒） */
+    text-decoration: none; /* 下線を消す */
+}
+
+.main-title a:hover {
+    color: inherit; /* ホバー時も色を変えない */
+    text-decoration: none; /* ホバー時も下線を表示しない */
 }
 
 .navigation {
@@ -47,7 +58,7 @@ body {
     /* 【調整1】music/movie/artの文字背景サイズ調整 */
     /* 左右の余白: 1.5emで半角3文字分程度 */
     /* 上下の余白: 0.5emで文字1文字分程度 */
-    padding: 0.5em 5em;
+    padding: 0.5em 1.5em;
     text-decoration: none;
     color: #000000;
     font-size: 1.1rem;
@@ -152,12 +163,30 @@ body {
     height: 100%;
 }
 
-.description {
+.description, .content-description {
     font-size: 1rem;
     line-height: 1.8;
-    text-align: center;
+    text-align: left; /* 左寄せに変更 */
     margin-top: 30px;
     padding: 0 20px;
+}
+
+.content-item {
+    margin-bottom: 80px; /* 各コンテンツ間の余白 */
+}
+
+.content-item:last-child {
+    margin-bottom: 40px; /* 最後のアイテムの下余白を少なく */
+}
+
+.apple-music-wrapper {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.apple-music-wrapper iframe {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* レスポンシブ対応 */
@@ -172,8 +201,10 @@ body {
     }
     
     .main-title {
-        font-size: 2rem;
+        font-size: 1.6rem; /* フォントサイズを小さく調整 */
         margin-bottom: 30px;
+        letter-spacing: 0.02em; /* レタースペーシングをさらに狭く */
+        white-space: nowrap; /* 改行を防ぐ */
     }
     
     .navigation {
@@ -185,7 +216,7 @@ body {
         /* 【調整2】スマホ版の区切り線の長さ調整 */
         /* width: 線の長さ（PC版と同じ値を使用） */
         /* height: 線の太さ */
-        width: 30px;
+        width: 10px;
         height: 1px;
     }
     
@@ -195,7 +226,7 @@ body {
         /* 上下の余白: 0.5emで文字1文字分程度（PC版と同じ） */
         width: 100%;
         text-align: center;
-        padding: 5em 20em;
+        padding: 0.5em 1.5em;
     }
     
     .content-title {
@@ -218,7 +249,8 @@ body {
 
 @media (max-width: 480px) {
     .main-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem; /* さらに小さく */
+        letter-spacing: 0.01em; /* レタースペーシングをより狭く */
     }
     
     .content-title {
