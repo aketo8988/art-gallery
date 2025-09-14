@@ -47,7 +47,7 @@ body {
     /* 【調整1】music/movie/artの文字背景サイズ調整 */
     /* 左右の余白: 1.5emで半角3文字分程度 */
     /* 上下の余白: 0.5emで文字1文字分程度 */
-    padding: 0.5em 1.5em;
+    padding: 0.5em 5em;
     text-decoration: none;
     color: #000000;
     font-size: 1.1rem;
@@ -185,7 +185,7 @@ body {
         /* 【調整2】スマホ版の区切り線の長さ調整 */
         /* width: 線の長さ（PC版と同じ値を使用） */
         /* height: 線の太さ */
-        width: 10px;
+        width: 30px;
         height: 1px;
     }
     
@@ -195,7 +195,7 @@ body {
         /* 上下の余白: 0.5emで文字1文字分程度（PC版と同じ） */
         width: 100%;
         text-align: center;
-        padding: 0.5em 1.5em;
+        padding: 1em 8em;
     }
     
     .content-title {
